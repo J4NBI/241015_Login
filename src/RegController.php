@@ -37,6 +37,7 @@ function createUser($post) {
 
     }
 
+
     $checkEmail = checkEmail($email);
 
     /// IF MAIL IS NOT IN LIST
@@ -51,6 +52,26 @@ function createUser($post) {
           'nachname' => $nachname,
           'email' => $email
         ]);
+      } else {
+        
+          // START
+          // PASSWORT HASH
+          $passwort = password_hash($passwort, PASSWORD_DEFAULT);
+        try {
+          $stmt = $pdo->prepare('INSERT INTO users (`vorname`, `nachname`, `email`,`passwort`) VALUES (:vorname, :nachname, :email, :passwort)');
+          $stmt->bindValue('vorname', $vorname);
+          $stmt->bindValue('nachname', $nachname);
+          $stmt->bindValue('email', $email);
+          $stmt->bindValue('passwort', $passwort);
+          $stmt->execute();
+
+          header("Location: index.php");
+
+    
+        } catch (PDOException $e) {
+          error_log("Error: " . $e->getMessage());
+          var_dump("Error: Unable to execute query. Please check the database connection and table existence.");
+        }
       }
     } else {
       $message  = "Es gibt schon einen user mit dieser email!";
@@ -62,28 +83,6 @@ function createUser($post) {
       ]);
     }
 
-    if (!$checkEmail) {
-      
-    } else {
-
-       // PASSWORT HASH
-       try {
-        $stmt = $pdo->prepare('INSERT INTO users (`vorname`, `nachname`, `email`,`passwort`) VALUES (:vorname, :nachname, :email, :passwort)');
-        $stmt->bindValue('vorname', $vorname);
-        $stmt->bindValue('nachname', $nachname);
-        $stmt->bindValue('email', $email);
-        $stmt->bindValue('passwort', $passwort);
-        $stmt->execute();
-
-
-  
-      } catch (PDOException $e) {
-        error_log("Error: " . $e->getMessage());
-        var_dump("Error: Unable to execute query. Please check the database connection and table existence.");
-      }
-
-    }
-    
   } else {
     var_dump("ERROR");
   }

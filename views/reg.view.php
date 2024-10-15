@@ -10,22 +10,23 @@
       <label for="vorname"></label>
       <input id="vorname" type="text" id="vorname" name="vorname" placeholder="Vorname" required 
       <?php if (isset($vorname) && !empty($vorname)) : ?>
-              value=" <?php echo $vorname ?>"
+              value="<?php echo $vorname ?>"
               <?php endif ?>>
       <label for="nachname"></label>
       <input type="text" id="nachname" name="nachname" placeholder="Nachname" required
       <?php if (isset($nachname) && !empty($nachname)) : ?>
-              value=" <?php echo e($nachname) ?>"
+              value="<?php echo e($nachname) ?>"
               <?php endif ?>>
     </div>
     
     <label for="email"></label>
-    <input type="email" id="email" name="email" placeholder="email@web.de" required
+    <input type="email" id="email" name="email" placeholder="Email" required
     <?php if (isset($email) && !empty($email)) : ?>
               value=" <?php echo e($email) ?>"
               <?php endif ?>>
     <label for="passwort"></label>
     <input type="password" id="passwort" name="passwort" placeholder="Passwort" required>
+    <p class="p-pass"> 8 Zeichen, Groß-/Kleinbuchstabe(n) + Zahl(en)  + Sonderzeichen</p>
     <label for="passwort2"></label>
     <input type="password" id="passwort2" name="passwort2" placeholder="Passwort wiederholen" required>
     <div class="btns">

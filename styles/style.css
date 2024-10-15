@@ -107,4 +107,10 @@ button:active {
 
 .message-error {
   color: red;
+  font-size: 0.9rem;
+}
+
+.p-pass {
+  font-size: 0.7rem;
+  align-self: flex-start;
 }
