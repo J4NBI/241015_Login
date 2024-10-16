@@ -26,9 +26,7 @@
               <?php endif ?>>
     <label for="passwort"></label>
     <input type="password" id="passwort" name="passwort" placeholder="Passwort" required>
-    <p class="p-pass"> 8 Zeichen, Groß-/Kleinbuchstabe(n) + Zahl(en)  + Sonderzeichen</p>
-    <label for="passwort2"></label>
-    <input type="password" id="passwort2" name="passwort2" placeholder="Passwort wiederholen" required>
+    <p class="p-pass">&nbsp 8 Zeichen, Groß-/Kleinbuchstabe(n) + Zahl(en)  + Sonderzeichen</p>
     <div class="btns">
       <button type="Reset"><i class="fa fa-refresh" aria-hidden="true"></i> Reset</button>
       <button type="Submit"><i class="fa fa-paper-plane" aria-hidden="true"></i> Registrieren</button>

@@ -9,7 +9,7 @@ function createUser($post) {
   $nachname = $post['nachname'];
   $email = $post['email'];
   $passwort = $post['passwort'];
-  $passwort2 = $post['passwort2'];
+  
   
 
   if (!empty($vorname) && !empty($nachname) && !empty($email) && !empty($passwort)) {
@@ -44,8 +44,8 @@ function createUser($post) {
     if ($checkEmail){
 
       // CHECK OB PASSWORTEN ÜBEREINSTIMMEN
-      if ($passwort !== $passwort2) {
-        $message  = "Passwörter müssen gleich sein!";
+      if (empty($passwort)) {
+        $message  = "Bitte ein Passwort eingeben!";
         render(__DIR__ . '/../reg.php', [
           'message' => $message,
           'vorname' => $vorname,

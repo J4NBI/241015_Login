@@ -1,5 +1,4 @@
 <?php
-// V2
 
 require_once __DIR__ . '/inc/all.php';
 require_once __DIR__ . '/src/RegController.php';
@@ -41,7 +40,7 @@ $emailChecked = emailValid();
 $passwortChecked = passwordValid();
 
 if ($emailChecked && $passwortChecked) {
-    createUser($_POST); // LoginController.php
+    createUser($_POST); // LoginController.php //
 } else {
   $message  = "Email oder Passwort nicht korrekt. Passwort muss  mindestens 8 zeichen ein klein und ein Großbuchstabe, ein Zahl sowie Sonderzeichen enhalten.";
         render(__DIR__ . '/reg.php', [

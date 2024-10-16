@@ -1,7 +1,10 @@
 <div class="reg-div">
-  <form action="/pages/submit.php" method="POST" class="reg-form">
+  <form action="index.php" method="POST" class="reg-form">
     <h2>Anmelden</h2>
     <p class="header-p">Hier bitte  einloggen! </p>
+    <?php if (isset($messageIndex)) : ?>
+      <p class="message-error"><?php echo e($messageIndex) ?></p>
+    <?php endif ?>
     
     <label for="email"></label>
     <input type="email" id="email" name="email" placeholder="email@web.de"  required>
