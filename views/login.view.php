@@ -7,7 +7,7 @@
     <?php endif ?>
     
     <label for="email"></label>
-    <input type="email" id="email" name="email" placeholder="email@web.de"  required>
+    <input type="email" id="email" name="email" placeholder="Email"  required>
     <label for="passwort"></label>
     <input type="password" id="passwort" name="passwort" placeholder="Passwort" required>
     <div class="btns">

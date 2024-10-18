@@ -56,6 +56,7 @@ class LoginController {
 
         if ($passwortOk === true){
           $this->ensureSession();
+          session_regenerate_id();
           $_SESSION['userLogin'] = $email;
           // var_dump($_SESSION);
           header ("location:page.php");
@@ -78,7 +79,9 @@ class LoginController {
   }
 
   public function ensureSession(){
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+      session_start();
+    }
 
   }
 

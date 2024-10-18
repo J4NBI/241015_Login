@@ -43,7 +43,7 @@ function createUser($post) {
     /// IF MAIL IS NOT IN LIST
     if ($checkEmail){
 
-      // CHECK OB PASSWORTEN ÜBEREINSTIMMEN
+      // CHECK OB PASSWORT
       if (empty($passwort)) {
         $message  = "Bitte ein Passwort eingeben!";
         render(__DIR__ . '/../reg.php', [

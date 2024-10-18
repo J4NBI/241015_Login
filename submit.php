@@ -7,7 +7,6 @@ $vorname = $_POST['vorname'];
 $nachname = $_POST['nachname'];
 $email = $_POST['email'];
 $passwort = $_POST['passwort'];
-$passwort2 = $_POST['passwort2'];
 
 // PASSWORT REGEX
 function passwordValid () {
@@ -50,7 +49,3 @@ if ($emailChecked && $passwortChecked) {
           'email' => $email
         ]);
 }
-
-
-// 
-

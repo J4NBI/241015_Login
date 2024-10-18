@@ -8,6 +8,7 @@ function render($path, array $data = []) {
    $content = ob_get_contents();
    ob_end_clean();
    
+   
    require __DIR__ . '/../views/layouts/main.view.php';
 }
 

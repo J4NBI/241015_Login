@@ -1,10 +1,10 @@
 <div class="reg-div">
-  <form action="/pages/submit.php" method="POST" class="reg-form">
+  <form action="send-password-reset.php" method="POST" class="reg-form">
     <h2>Passwort  zurück  setzen</h2>
-    <p class="header-p">Wir senden dir dein Passwort</p>
+    <p class="header-p">Wir senden dir eine Email</p>
     
     <label for="email"></label>
-    <input type="email" id="email" name="email" placeholder="email@web.de"  required>
+    <input type="email" id="email" name="email" placeholder="Email"  required>
     <button type="Submit"><i class="fa fa-paper-plane" aria-hidden="true"></i> Senden</button>
 
     <a class="anker" href="reg.php">Ich bin noch nicht registriert!</a>
