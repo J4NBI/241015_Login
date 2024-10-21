@@ -3,6 +3,8 @@
 require_once __DIR__ . '/../inc/all.php';
 
 
+
+// Check if Session user in System
 class AuthService {
   private $pdo;
 

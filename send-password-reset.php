@@ -3,10 +3,13 @@ require_once __DIR__ . '/inc/all.php';
 
 $email = $_POST['email'];
 
+// GENERATE TOKEN
 $token = bin2hex(random_bytes(16));
 
+// TOKEN HASH
 $token_hash = hash("sha256", $token);
 
+// SET EXPIRE DATE
 $expiry = date('Y-m-d H:i:s', time() + 60 * 30);
 
 
@@ -21,6 +24,8 @@ try {
 
   $stmt->execute();
   $affectedRows = $stmt->rowCount();
+
+    // IF EMAIL IS IN DATABANK SEND MAIL
     if ($affectedRows > 0) {
       $mail = require __DIR__ . "/mailer.php";
 
@@ -43,8 +48,11 @@ try {
           echo "Message could not be sent. Mailer error: {$mail->ErrorInfo}";
   
       }
+    // IF EMAIL IS NOT IN DATABANK
     } else {
-        echo "Email nicht registriert!";
+       $message  = "Email nicht registriert!";
+        header("location:passreset.php?message=" . urlencode($message));
+        exit;
     }
   
 } catch (PDOException $e) {

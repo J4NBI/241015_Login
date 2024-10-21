@@ -9,7 +9,7 @@
     <div class="div-namen">
       <label for="vorname"></label>
       <input id="vorname" type="text" id="vorname" name="vorname" placeholder="Vorname" required 
-      <?php if (isset($vorname) && !empty($vorname)) : ?>
+      <?php if (isset($vorname)): ?>
               value="<?php echo $vorname ?>"
               <?php endif ?>>
       <label for="nachname"></label>

@@ -1,0 +1,93 @@
+<mxfile host="65bd71144e">
+    <diagram id="QtqujafBPEv0LUBSpJoB" name="Seite-1">
+        <mxGraphModel dx="355" dy="536" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="11" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#60a917;strokeColor=#2D7600;jumpSize=14;startSize=11;endSize=11;" edge="1" parent="1" source="2" target="7">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" style="edgeStyle=none;jumpSize=14;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startSize=11;endSize=11;fillColor=#60a917;strokeColor=#2D7600;" edge="1" parent="1" source="2" target="12">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" style="edgeStyle=none;jumpSize=14;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startSize=11;endSize=11;fillColor=#60a917;strokeColor=#2D7600;" edge="1" parent="1" source="2" target="13">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" style="edgeStyle=none;jumpSize=14;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;startSize=11;endSize=11;" edge="1" parent="1" source="2" target="3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" style="edgeStyle=none;jumpSize=14;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=1;startSize=11;endSize=11;fillColor=#008a00;strokeColor=#005700;" edge="1" parent="1" source="2" target="13">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="&lt;b&gt;LOGIN&lt;br&gt;&lt;/b&gt;index.php&lt;br&gt;login.view.php" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="172" y="200" width="100" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="LoginController&lt;br&gt;checkEmail()&lt;br&gt;checkPasswort()" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="100" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="PAGE&lt;br&gt;check session -&amp;gt; AuthService.php&lt;br&gt;page.view.php -&amp;gt; check session&lt;br&gt;Logout" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="164" y="370" width="116" height="116" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" style="edgeStyle=none;jumpSize=14;html=1;startSize=11;endSize=11;fillColor=#60a917;strokeColor=#2D7600;" edge="1" parent="1" source="12" target="2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="" style="edgeStyle=none;jumpSize=14;html=1;fontColor=#FFFFFF;endArrow=block;endFill=1;startSize=11;endSize=11;" edge="1" parent="1" source="12" target="39">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="&lt;b&gt;RESET&lt;br&gt;passreset.php&lt;br&gt;passreset.view.php&lt;br&gt;&lt;br&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="462" y="110" width="118" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="" style="edgeStyle=none;jumpSize=14;html=1;startSize=11;endSize=11;fillColor=#60a917;strokeColor=#2D7600;" edge="1" parent="1" source="13" target="2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" style="edgeStyle=none;jumpSize=14;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=block;endFill=1;startSize=11;endSize=11;" edge="1" parent="1" source="13" target="26">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="482" y="315" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="13" value="&lt;b&gt;REGISTER&lt;/b&gt;&lt;br&gt;reg.php&lt;br&gt;reg.view.php" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="462" y="200" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" style="edgeStyle=none;jumpSize=14;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;endArrow=block;endFill=1;startSize=11;endSize=11;" edge="1" parent="1" source="26" target="28">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="" style="edgeStyle=none;jumpSize=14;html=1;endArrow=block;endFill=1;startSize=11;endSize=11;" edge="1" parent="1" source="26" target="13">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="SUBMIT&lt;br&gt;submit.php&lt;br&gt;Validate email/pass" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+                    <mxGeometry x="462" y="305" width="120" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" style="edgeStyle=none;jumpSize=14;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=1;startSize=11;endSize=11;fillColor=#008a00;strokeColor=#005700;" edge="1" parent="1" source="28" target="2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="RegController&lt;br&gt;createUser()" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" vertex="1" parent="1">
+                    <mxGeometry x="312" y="300" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="" style="edgeStyle=none;jumpSize=14;html=1;fontColor=#FFFFFF;endArrow=block;endFill=1;startSize=11;endSize=11;" edge="1" parent="1" source="39" target="41">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="" style="edgeStyle=none;jumpSize=14;html=1;fontColor=#FFFFFF;endArrow=block;endFill=1;startSize=11;endSize=11;" edge="1" parent="1" source="39" target="12">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="&lt;div style=&quot;background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; line-height: 18px;&quot;&gt;&lt;div style=&quot;line-height: 18px;&quot;&gt;&lt;font color=&quot;#ffffff&quot;&gt;send-password-reset.php&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="110" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="" style="edgeStyle=none;jumpSize=14;html=1;fontColor=#FFFFFF;endArrow=block;endFill=1;startSize=11;endSize=11;fillColor=#008a00;strokeColor=#005700;" edge="1" parent="1" source="41" target="47">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="EMAIL" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="660" y="240" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="" style="edgeStyle=none;jumpSize=14;html=1;fontColor=#FFFFFF;endArrow=block;endFill=1;startSize=11;endSize=11;" edge="1" parent="1" source="47" target="49">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="&lt;b&gt;RESET PW&lt;/b&gt;&lt;br&gt;reset-password.php&lt;br&gt;newpass.view" style="rounded=1;whiteSpace=wrap;html=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="360" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="&lt;div style=&quot;background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; line-height: 150%;&quot;&gt;process-reset-password.php&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="460" width="120" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

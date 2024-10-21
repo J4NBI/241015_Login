@@ -98,6 +98,7 @@ button:active {
 
 .header-p{
   margin-bottom: 10px;
+  font-size: 2rem;
 }
 
 .anker {
@@ -107,7 +108,7 @@ button:active {
 
 .message-error {
   color: red;
-  font-size: 0.9rem;
+  font-size: 1.3rem;
 }
 
 .p-pass {

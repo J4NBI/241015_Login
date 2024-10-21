@@ -3,6 +3,8 @@
 require_once __DIR__ . '/../inc/all.php';
 require_once __DIR__ . '/../inc/db-connect.inc.php';
 
+
+// LoginController checkEmail checkPasswort
 class LoginController {
   private $pdo;
   
@@ -26,6 +28,7 @@ class LoginController {
       $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
       if (!empty($result)) {
         
+      // SEND EMAIL TRUE OR FALSE TO index.php  
         return true;
       } else {
         return false;
@@ -52,23 +55,13 @@ class LoginController {
         $passwortGet = $result[0]['passwort'];
         $passwortOk = password_verify($passwortH,$passwortGet);
 
-        /// PASSWORT CORRECT DANN...
-
+        // SEND PASSWORT TRUE OR FALSE TO index.php
         if ($passwortOk === true){
-          $this->ensureSession();
-          session_regenerate_id();
-          $_SESSION['userLogin'] = $email;
-          // var_dump($_SESSION);
-          header ("location:page.php");
+          return true;
         } else {
-          // var_dump('Not Correct');
-          $messageIndex = "Passwort Falsch!";
-          return $messageIndex;
+          return false;
         }
-        return true;
-      } else {
-        return false;
-      }
+      } 
       
 
     } catch (PDOException $e) {

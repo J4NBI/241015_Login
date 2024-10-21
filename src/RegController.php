@@ -3,6 +3,7 @@
 require_once __DIR__ . '/../inc/all.php';
 
 
+// GET POST DATA
 function createUser($post) {
   global $pdo;
   $vorname = $post['vorname'];
@@ -12,10 +13,11 @@ function createUser($post) {
   
   
 
+  // IF POSTs NOT EMPTY
   if (!empty($vorname) && !empty($nachname) && !empty($email) && !empty($passwort)) {
 
-    // CHECK OB EMAIL SCHON VORHANEN
-    function checkEmail ($email) {
+    // CHECK OB EMAIL SCHON VORHANDEN
+    function checkEmail ($email,$vorname,$nachname) {
       global $pdo;
   
       try {
@@ -26,7 +28,12 @@ function createUser($post) {
         if (empty($result)) {
           return true;
         } else {
-          return false;
+          $message = "Email schon registriert!";
+          header("location:reg.php?message=" . urlencode($message). 
+                "&vorname=" . urlencode($vorname) . 
+                "&nachname=" . urlencode($nachname) . 
+                "&email=" . urlencode($email));
+          exit;
         }
         
   
@@ -38,7 +45,7 @@ function createUser($post) {
     }
 
 
-    $checkEmail = checkEmail($email);
+    $checkEmail = checkEmail($email,$vorname,$nachname);
 
     /// IF MAIL IS NOT IN LIST
     if ($checkEmail){
@@ -54,7 +61,7 @@ function createUser($post) {
         ]);
       } else {
         
-          // START
+          // START INSERT ENTRY
           // PASSWORT HASH
           $passwort = password_hash($passwort, PASSWORD_DEFAULT);
         try {
@@ -73,6 +80,8 @@ function createUser($post) {
           var_dump("Error: Unable to execute query. Please check the database connection and table existence.");
         }
       }
+
+    // IF NOT CHECKMAIL
     } else {
       $message  = "Es gibt schon einen user mit dieser email!";
       render(__DIR__ . '/../reg.php', [
@@ -83,8 +92,9 @@ function createUser($post) {
       ]);
     }
 
+   // IF POSTs empty
   } else {
-    var_dump("ERROR");
+    echo ("Bitte Felder ausfüllen!");
   }
 
 }

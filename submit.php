@@ -34,12 +34,12 @@ function emailValid() {
   }
 }
 
-// IF CHECKED 
+// CHECK EMAIL AND PASSWORT
 $emailChecked = emailValid();
 $passwortChecked = passwordValid();
 
 if ($emailChecked && $passwortChecked) {
-    createUser($_POST); // LoginController.php //
+    createUser($_POST); // RegisterController.php
 } else {
   $message  = "Email oder Passwort nicht korrekt. Passwort muss  mindestens 8 zeichen ein klein und ein Großbuchstabe, ein Zahl sowie Sonderzeichen enhalten.";
         render(__DIR__ . '/reg.php', [

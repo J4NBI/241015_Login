@@ -5,33 +5,48 @@ require_once __DIR__ . '/inc/all.php';
 
 
 $token = $_POST['token'];
+$send = $_POST['send'];
+// REPEAT PASSWORD NOT PASSWORD 
 
+$password = $_POST['password'];
+$password_confirmation = $_POST['password_confirmation'];
+
+
+if ($password !== $password_confirmation) {
+  
+  $message  = "Passwörter nicht gleich!";
+  header("location:reset-password.php?message=" . urlencode($message) .
+        '&token=' . $token);
+  exit;
+}
+
+// CHECK TOKEN
 try {
   $stmt = $pdo->prepare('SELECT * FROM users WHERE reset_token_hash = :token');
   $stmt->bindValue('token', $token);
   $stmt->execute();
   $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
   if (empty($result)) {
-    die('token not Found');
+    $message  = "Token expired!";
+    header("location:reset-password.php?message=" . urlencode($message));
+    exit;
   }
   if (strtotime($result[0]["reset_token_expires_at"]) <= time()) {
-    die('token expired');
+    $message  = "Token expired!";
+    header("location:reset-password.php?message=" . urlencode($message));
+    exit;
   }
 
-  $password = $_POST['password'];
-  $password_confirmation = $_POST['password_confirmation'];
+  
 
-  if ($password !== $password_confirmation) {
-    die('Passwörter nicht gleich!');
-  }
+  // PASWORD VALIDATION
   if ($password === $password_confirmation) {
     $passwortRegEx = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!"§$%&\/\\(\\)=?@*?&])[^\s]{8,}$/';
     $passwortTest = $_POST['password'];
 
     if (preg_match($passwortRegEx, $passwortTest)) {
-      // IF REGEX TRUE
-      // var_dump($result[0]['ID']);
-      // die();
+
       
       $password = password_hash($password, PASSWORD_DEFAULT);
       try {
@@ -51,7 +66,9 @@ try {
       }
 
     } else {
-      die('passwort muss...');
+      $message  = "Passwort muss 8 Zeichen haben Groß/Klein-Buchstabn sowie Zahlen und Sonderzeichen enthalten!";
+      header("location:reset-password.php?message=" . urlencode($message));
+      exit;
     }
 
   }
