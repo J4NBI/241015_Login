@@ -10,7 +10,7 @@
     <input type="email" id="email" name="email" placeholder="Email"  required>
     <button type="Submit"><i class="fa fa-paper-plane" aria-hidden="true"></i> Senden</button>
 
-    <a class="anker" href="reg.php">Ich bin noch nicht registriert!</a>
+    <a class="anker" href="reg.php">Ich bin noch nicht registriert</a>
     <a class="anker" href="index.php">Zum Login</a>
     
   </form>

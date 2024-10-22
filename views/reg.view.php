@@ -25,12 +25,42 @@
               value=" <?php echo e($email) ?>"
               <?php endif ?>>
     <label for="passwort"></label>
-    <input type="password" id="passwort" name="passwort" placeholder="Passwort" minlength="8" required>
+    <div class="password-content">
+      <input type="password" id="passwort" name="passwort" placeholder="Passwort" minlength="8" required>
+      <span class="password-toggle">
+          <i class="fa fa-eye" aria-hidden="true"></i>
+      </span>
+    </div>
     <p class="p-pass">&nbsp 8 Zeichen, Groß-/Kleinbuchstabe(n) + Zahl(en)  + Sonderzeichen</p>
     <div class="btns">
       <button type="Reset"><i class="fa fa-refresh" aria-hidden="true"></i> Reset</button>
       <button type="Submit"><i class="fa fa-paper-plane" aria-hidden="true"></i> Registrieren</button>
     </div>
-    <a class="anker" href="index.php">Du  hast  bereits ein Konto?</a>
+    <a class="anker" href="index.php">Du  hast  bereits ein Konto</a>
   </form>
 </div>
+
+<script>
+  const passwordField = document.getElementById('passwort');
+  const passwordToggle = document.querySelector('.password-toggle i');
+
+
+  //Eventlistener Icon Passwort
+  passwordToggle.addEventListener('click', () => {
+        
+        // Switch 
+        if (passwordField.type === 'password') {
+            
+            passwordField.type = 'text';
+            
+            passwordToggle.classList.remove('fa-eye');
+            passwordToggle.classList.add('fa-eye-slash');
+        } else {
+            
+            passwordField.type = 'password';
+           
+            passwordToggle.classList.remove('fa-eye-slash');
+            passwordToggle.classList.add('fa-eye');
+        }
+    });
+</script>
