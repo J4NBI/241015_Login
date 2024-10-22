@@ -10,7 +10,7 @@
       <label for="vorname"></label>
       <input id="vorname" type="text" id="vorname" name="vorname" placeholder="Vorname" required 
       <?php if (isset($vorname)): ?>
-              value="<?php echo $vorname ?>"
+              value="<?php echo e($vorname) ?>"
               <?php endif ?>>
       <label for="nachname"></label>
       <input type="text" id="nachname" name="nachname" placeholder="Nachname" required

@@ -126,6 +126,7 @@ button:active {
 }
 
 .password-content {
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -136,4 +137,10 @@ button:active {
 
 .label-pw {
   align-self: baseline;
+}
+
+.password-toggle,
+.password-confirmation-toggle {
+  position: absolute;
+  right: 5%;
 }

@@ -1,4 +1,5 @@
 <?php
+// Login Jan Bihl v.4
 
 require_once __DIR__ . '/inc/all.php';
 require_once __DIR__ . '/src/LoginController.php';

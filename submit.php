@@ -8,6 +8,7 @@ $nachname = $_POST['nachname'];
 $email = $_POST['email'];
 $passwort = $_POST['passwort'];
 
+
 // PASSWORT REGEX
 function passwordValid () {
   $passwortRegEx = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!"§$%&\/\\(\\)=?@*?&])[^\s]{8,}$/';
@@ -38,14 +39,28 @@ function emailValid() {
 $emailChecked = emailValid();
 $passwortChecked = passwordValid();
 
-if ($emailChecked && $passwortChecked) {
-    createUser($_POST); // RegisterController.php
+if (!$emailChecked) {
+  $message  = "Email nicht valide, bitte neu Email eingeben!";
+    header("location:reg.php?message=" . urlencode($message). 
+          "&vorname=" . urlencode($vorname) . 
+          "&nachname=" . urlencode($nachname) . 
+          "&email=" . urlencode($email));
+    exit;
 } else {
-  $message  = "Email oder Passwort nicht korrekt. Passwort muss  mindestens 8 zeichen ein klein und ein Großbuchstabe, ein Zahl sowie Sonderzeichen enhalten.";
-        render(__DIR__ . '/reg.php', [
-          'message' => $message,
-          'vorname' => $vorname,
-          'nachname' => $nachname,
-          'email' => $email
-        ]);
+
+  if (!$passwortChecked) {
+    $message  = "Passwort muss  mindestens 8 zeichen ein klein und ein Großbuchstabe, ein Zahl sowie Sonderzeichen enhalten.";
+    header("location:reg.php?message=" . urlencode($message). 
+          "&vorname=" . urlencode($vorname) . 
+          "&nachname=" . urlencode($nachname) . 
+          "&email=" . urlencode($email));
+    exit;
+    
+} else {
+  
+  // IF EMAIL AND PASSWORT CREATE USER
+  createUser($_POST); // RegisterController.php
 }
+
+}
+
