@@ -38,6 +38,8 @@ try {
       to reset your password.
   
       END;
+      header('Location:index.php');
+      
   
       try {
   

@@ -4,16 +4,9 @@ require __DIR__ . '/inc/db-connect.inc.php';
 require_once __DIR__ . '/inc/all.php';
 
 // CHECK IF TOKEN GET
-if (!empty($_GET['token']) && empty($_GET['send'])) {
-  $token = $_GET['token'];
-  $token_hash = hash('sha256', $token);
-  
-} else if (!empty($_GET['send'])) {
-  $token_hash = $_GET['token'];
 
-}else {
-  $token = "";
-}
+$token = $_GET['token'];
+$token_hash = hash('sha256', $token);
 
 
 // CHECK IF MESSAGE
@@ -21,8 +14,6 @@ $messageIndex = "";
 if (isset($_GET['message'])) {
     $messageIndex = $_GET['message'];
 }
-
-
 
 
 
@@ -37,7 +28,7 @@ try {
   // IF NO TOKEN GO TO RESET PAGE
   
   if (empty($result)) {
-    $message  = "Token not found! Page";
+    $message  = "Token not found!";
     header("location:passreset.php?message=" . urlencode($message));
     exit;
   }
@@ -50,6 +41,7 @@ try {
 
   render(__DIR__ . '/views/newpass.view.php', [
     'token_hash' => $token_hash,
+    'token' => $token,
     'message' => $messageIndex
   ]);
   

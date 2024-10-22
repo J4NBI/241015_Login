@@ -25,7 +25,7 @@
               value=" <?php echo e($email) ?>"
               <?php endif ?>>
     <label for="passwort"></label>
-    <input type="password" id="passwort" name="passwort" placeholder="Passwort" required>
+    <input type="password" id="passwort" name="passwort" placeholder="Passwort" minlength="8" required>
     <p class="p-pass">&nbsp 8 Zeichen, Groß-/Kleinbuchstabe(n) + Zahl(en)  + Sonderzeichen</p>
     <div class="btns">
       <button type="Reset"><i class="fa fa-refresh" aria-hidden="true"></i> Reset</button>
